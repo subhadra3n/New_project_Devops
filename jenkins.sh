@@ -26,3 +26,12 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update -y 
 sudo apt-get install jenkins -y
+
+#below lines of code for uninstall jenkins application from server
+
+sudo systemctl stop jenkins 
+sudo apt-get purge jenkins 
+sudo rm /etc/apt/sources.list.d/jenkins.list 
+sudo rm -rf /var/lib/jenkins/ 
+sudo rm -rf /var/cache/jenkins
+sudo apt-get update
